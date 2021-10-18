@@ -1,0 +1,71 @@
+¿Qué es?:
+  -Una DB open source, no sql.
+  -Enfocada para apps que generen muchos datos demasiado rápido.
+  -Escalable: Podemos añadir más recursos a nuestra DB simplemente añadiendo
+    más servidores.
+  -A unir muchos computadores para extender sus recursos se le conoce como
+    cluster.
+  -De proposito general: Puede ser usada para multiples aplicaciones, 
+    aunque principalmente se hace para apps que generen muchos datos, se
+    usa por ejemplo para apps en internet, de hecho, es donde más se usa.
+  -Básado en documentos: Los objetos de JS que vamos a estar guardando se
+    les conoce como documentos.
+  -Sin esquemas: No todos los datos van a aparecer al ser guardados.
+  -Escalado horizontal (scale out): Cuando nuestra DB vaya creciendo, no
+    tendremos que comprar o pagar por un servidor más potente, simplemente
+    agregamos otro servidor para que soporte la carga y los datos se
+    distribuyan, en lo que es un Cluster. MongoDb ya lo hace por nosotros.
+  -Usa JSON como formato de datos.
+
+Instalación:
+  -Hay 3 opciones que vamos a ver en este curso:
+    .Mongo Atlas: es el servicio de DB en la nube, donde MongoDB tendrá
+      nuestras DB.
+    .MongoDB community server: Será tener las DB en nuestro propio 
+      servidor.
+    .MongoDB compass: Para manejar nuestras DB de nuestro servidor mediante
+      una interfaz.
+
+MongoDB comunity server:
+  -Iremos al sitio mongodb.com, y buscaremos donde se descargue la 
+    versión community server.
+  -Esto nos dará un instalador.
+  -En caso de windows, nos debe dar un msi.
+  -Al inicio nos vienen 2 opciones: completa y custom.
+  -Damos click en completa, y quitamos el check.
+    .El check lo que nos indica es que instalaremos mongodb como un 
+      servicio, es decir, que empezará a correr al encender el computador.
+  -El resto daremos next.
+  -Al instalarlo, instala automaticamente mongoDB compass.
+  -Para saber si se instaló correctamente, tenemos el comando 
+    "mongod --version", en caso de que nos diga que el comando no se 
+    reconoce, es porque hay que agregarlo al Path.
+
+Agregar un comando al path en windows:
+  -Necesitamos saber la dirección de la aplicación en los archivos.
+  -En consola iremos hasta esa carpeta.
+  -Aquí, colocamos: .\mongod.exe --version. Con esto ejecutamos esa app
+    y revisamos la versión.
+  -El path son las rutas a las que el SO puede acceder desde cualquier
+    parte.
+  -Entonces vamos a Este Equipo > Propiedades (de este equipo) > Conf. 
+    avanzada del sistema > Variables de entorno > Path (doble click) >
+    Nuevo > Pegamos la direccion de la carpeta donde está mongoDB.
+  -Ahora desde la terminal podemos usar mongod --version.
+
+Iniciando mongoDB:
+  -Ejecutando el comando "mongod" iniciamos la aplicación, se debe
+    mantener escuchando, en caso de que no lo haga, es porque faltó
+    una config. de MongoDb.
+  -Esta conf. es ir a C (en windows), crear la carpeta data, y dentro,
+   la carpeta db.
+  -Lo importante, es leer el mensaje "waiting for connection on port 27017".
+  -Esto significa que inició nuestro servidor de DB.
+  -Para conectarnos, en otra consola usamos el comando "mongo".
+  -Al usarlo, en windows, si no lo ejecutamos como administrador, tenemos
+    que dar un enter en la terminal que corre el servidor de DB.
+  -En la segunda db, ya podemos ver que estamos conectados, y esto nos
+    proporciona un shell donde podemos realizar comandos para manejar 
+    nuestras.
+  -Con esto, ya tenemos todo instalado, podemos cerrar ambas conexiones
+    con ctrl + c.
